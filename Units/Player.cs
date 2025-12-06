@@ -10,7 +10,7 @@ namespace GamePrototype.Units
         private readonly Dictionary<EquipSlot, EquipItem> _equipment = new();
 
         public Player(string name, uint health, uint maxHealth, uint baseDamage) : base(name, health, maxHealth, baseDamage)
-        {            
+        {           
         }
 
         public override uint GetUnitDamage()
@@ -22,16 +22,42 @@ namespace GamePrototype.Units
             return BaseDamage;
         }
 
+        protected override void DamageReceiveHandler()
+        {
+
+            var items = Inventory.Items;
+            for (int i = 0; i < items.Count; i++)
+            {if (items[i] is Armour armour)
+                {
+                    armour.LoseDurability();
+                }         
+            }
+
+
+        }
+
         public override void HandleCombatComplete()
         {
             var items = Inventory.Items;
-            for (int i = 0; i < items.Count; i++) 
+            for (int i = 0; i < items.Count; i++)
             {
-                if (items[i] is EconomicItem economicItem) 
+                if (items[i] is EconomicItem economicItem)
                 {
                     UseEconomicItem(economicItem);
                     Inventory.TryRemove(items[i]);
                 }
+                if (items[i] is Weapon weapon)
+                { for (int j = 0; j < items.Count; j++)
+                    {
+                        if (items[j] is Grindstone grindstone) 
+                        { 
+                            weapon.Repair(grindstone);
+                            Inventory.TryRemove(items[j]);
+                        }
+                    }
+                    
+                }
+
             }
         }
 
@@ -74,6 +100,33 @@ namespace GamePrototype.Units
                 builder.AppendLine($"[{items[i].Name}] : {items[i].Amount}");
             }
             return builder.ToString();
+        }
+
+
+        public void ReplaceEquipment()
+        {
+            
+            Console.WriteLine($"Do you want to equip your hidden weapon? \nyes/no");
+            if (Console.ReadLine() == "yes")
+            {
+                EquipItem replaced = _equipment[EquipSlot.Weapon];
+                _equipment[EquipSlot.Weapon] = _equipment[EquipSlot.freeSlot];
+                _equipment[EquipSlot.freeSlot] = replaced;
+
+                Console.WriteLine("Sucsses");
+                //I hope
+            }
+            else Console.WriteLine(); 
+        }
+
+        public void EquipHidden( EquipItem replaced)
+        {
+            if (_equipment[EquipSlot.Weapon] == null)
+            {
+                _equipment[EquipSlot.Weapon] = _equipment[EquipSlot.freeSlot];
+                _equipment.Remove(EquipSlot.freeSlot);
+                Console.WriteLine($"{Name} equip hidden weapon!");
+            }
         }
     }
 }

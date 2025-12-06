@@ -1,4 +1,6 @@
 ﻿using GamePrototype.Items.EconomicItems;
+using GamePrototype.Items.EquipItems;
+using GamePrototype.Utils;
 
 namespace GamePrototype.Units
 {
@@ -39,14 +41,14 @@ namespace GamePrototype.Units
             {
                 _health -= damageApplied;
             }
-            
-            DamageReceiveHandler();
+
+                DamageReceiveHandler();   
         }
 
         protected abstract uint CalculateAppliedDamage(uint damage);
-        
+
         protected virtual void DamageReceiveHandler() { }
-        
+
         public abstract uint GetUnitDamage();
 
         public abstract void HandleCombatComplete();

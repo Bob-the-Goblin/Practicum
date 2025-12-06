@@ -3,6 +3,11 @@
     public enum EquipSlot
     {
         Weapon,
-        Armour
+        Armour,
+        Accessiories,
+        freeSlot,
+        freeSlot2
+
     }
 }
+

@@ -1,7 +1,8 @@
 ﻿using GamePrototype.Combat;
 using GamePrototype.Dungeon;
 using GamePrototype.Units;
-using GamePrototype.Utils;
+using GamePrototype.Utils.Difficulty;
+using System;
 
 namespace GamePrototype.Game
 {
@@ -10,6 +11,9 @@ namespace GamePrototype.Game
         private Unit _player;
         private DungeonRoom _dungeon;
         private readonly CombatManager _combatManager = new CombatManager();
+        private Difficulty difficulty;
+        
+        
         
         public void StartGame() 
         {
@@ -20,12 +24,29 @@ namespace GamePrototype.Game
 
         #region Game Loop
 
+        private void SetDifficulty()
+        {   
+            while (difficulty == null) 
+            {
+                Console.WriteLine($"Let set difficulty for your adventure\n" +
+                $"Type {DifficultyLevel.easy} = {(int)DifficultyLevel.easy} " +
+                $"or {DifficultyLevel.hard} = {(int)DifficultyLevel.hard} ");
+                if (Enum.TryParse<DifficultyLevel>(Console.ReadLine(), out var level))
+                {
+                    if (level == DifficultyLevel.easy) difficulty = new DifficultyEasy();
+                    else difficulty = new DifficultyHard();
+
+                }
+                
+             }
+        }
+
         private void Initialize()
         {
+            SetDifficulty();
             Console.WriteLine("Welcome, player!");
-            _dungeon = DungeonBuilder.BuildDungeon();
             Console.WriteLine("Enter your name");
-            _player = UnitFactoryDemo.CreatePlayer(Console.ReadLine());
+            difficulty.SetDifficulty(Console.ReadLine(), out _player, out _dungeon);
             Console.WriteLine($"Hello {_player.Name}");
         }
 
@@ -60,6 +81,10 @@ namespace GamePrototype.Game
             Console.WriteLine(_player.ToString());
         }
 
+        private void CheckDifficulty(DifficultyLevel level)
+        { if (level == DifficultyLevel.hard) { }
+            
+        }
         private void StartRoomEncounter(DungeonRoom currentRoom, out bool success)
         {
             success = true;
@@ -73,6 +98,7 @@ namespace GamePrototype.Game
                 {
                     _player.HandleCombatComplete();
                     LootEnemy(currentRoom.Enemy);
+                    
                 }
                 else 
                 {

@@ -9,5 +9,9 @@ namespace GamePrototype.Items.EquipItems
         public uint Defence { get; }
 
         public override EquipSlot Slot => EquipSlot.Armour;
+
+        public void LoseDurability ()
+        { Durability--; }
     }
 }
+    

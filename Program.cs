@@ -7,6 +7,7 @@ namespace GamePrototype
         static void Main(string[] args)
         {
             new GameLoop().StartGame();
+
         }
     }
 }

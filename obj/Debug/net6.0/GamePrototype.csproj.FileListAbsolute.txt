@@ -13,3 +13,17 @@ C:\Users\User\source\repos\GamePrototype\obj\Debug\net6.0\refint\GamePrototype.d
 C:\Users\User\source\repos\GamePrototype\obj\Debug\net6.0\GamePrototype.pdb
 C:\Users\User\source\repos\GamePrototype\obj\Debug\net6.0\GamePrototype.genruntimeconfig.cache
 C:\Users\User\source\repos\GamePrototype\obj\Debug\net6.0\ref\GamePrototype.dll
+D:\netolgia\Practicum\GamePrototype\bin\Debug\net6.0\GamePrototype.exe
+D:\netolgia\Practicum\GamePrototype\bin\Debug\net6.0\GamePrototype.deps.json
+D:\netolgia\Practicum\GamePrototype\bin\Debug\net6.0\GamePrototype.runtimeconfig.json
+D:\netolgia\Practicum\GamePrototype\bin\Debug\net6.0\GamePrototype.dll
+D:\netolgia\Practicum\GamePrototype\bin\Debug\net6.0\GamePrototype.pdb
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.GeneratedMSBuildEditorConfig.editorconfig
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.AssemblyInfoInputs.cache
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.AssemblyInfo.cs
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.csproj.CoreCompileInputs.cache
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.dll
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\refint\GamePrototype.dll
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.pdb
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\GamePrototype.genruntimeconfig.cache
+D:\netolgia\Practicum\GamePrototype\obj\Debug\net6.0\ref\GamePrototype.dll

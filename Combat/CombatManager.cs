@@ -34,8 +34,8 @@ namespace GamePrototype.Combat
             return null;
         }
 
-        private string GetCombatString() => $"Type {RockPaperScissors.Rock} = {(int)RockPaperScissors.Rock}" +
-            $"or {RockPaperScissors.Paper} = {(int)RockPaperScissors.Paper}" +
+        private string GetCombatString() => $"Type {RockPaperScissors.Rock} = {(int)RockPaperScissors.Rock} " +
+            $"or {RockPaperScissors.Paper} = {(int)RockPaperScissors.Paper} " +
             $"or {RockPaperScissors.Scissors} = {(int)RockPaperScissors.Scissors}";
 
         private void HandleCombatInput(Unit player, Unit enemy, RockPaperScissors rockPaperScissors)

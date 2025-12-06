@@ -3,6 +3,7 @@
     public sealed class Grindstone : EconomicItem
     {
         public override bool Stackable => false;
+        public uint ArmourRestore => 4;
 
         public Grindstone(string name) : base(name)
         {
