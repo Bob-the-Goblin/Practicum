@@ -66,7 +66,7 @@ namespace GamePrototype.Units
             for (int i = 0; i < unit.Inventory.Items.Count; i++)
             {
                 if (unit.Inventory.Items[i] is EquipItem equipitem)
-                { AddItemToInventory(equipitem);}
+                { ReplaceEquipment(equipitem); }
 
                 if (!Inventory.TryAdd(unit.Inventory.Items[i]))
                 {

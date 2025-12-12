@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\netolgia\\Practicum\\GamePrototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|d:\\netolgia\\practicum\\gameprototype\\units\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|solutionrelative:units\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|d:\\netolgia\\practicum\\gameprototype\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|solutionrelative:game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|d:\\netolgia\\practicum\\gameprototype\\units\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|solutionrelative:units\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|d:\\netolgia\\practicum\\gameprototype\\game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|solutionrelative:game\\gameloop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|d:\\netolgia\\practicum\\gameprototype\\units\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DD66E181-5549-4E58-B2BF-1E870F087123}|GamePrototype.csproj|solutionrelative:units\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameLoop.cs",
               "DocumentMoniker": "D:\\netolgia\\Practicum\\GamePrototype\\Game\\GameLoop.cs",
               "RelativeDocumentMoniker": "Game\\GameLoop.cs",
               "ToolTip": "D:\\netolgia\\Practicum\\GamePrototype\\Game\\GameLoop.cs",
               "RelativeToolTip": "Game\\GameLoop.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwGUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAASwIAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-10T12:50:50.844Z",
               "IsPinned": true,
@@ -54,20 +54,20 @@
               "RelativeDocumentMoniker": "Units\\Unit.cs",
               "ToolTip": "D:\\netolgia\\Practicum\\GamePrototype\\Units\\Unit.cs",
               "RelativeToolTip": "Units\\Unit.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAkwD0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAAEEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T10:50:26.754Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\netolgia\\Practicum\\GamePrototype\\Units\\Player.cs",
               "RelativeDocumentMoniker": "Units\\Player.cs",
               "ToolTip": "D:\\netolgia\\Practicum\\GamePrototype\\Units\\Player.cs",
               "RelativeToolTip": "Units\\Player.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAiwDkAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T10:13:07.167Z",
               "EditorCaption": ""

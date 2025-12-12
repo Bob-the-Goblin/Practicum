@@ -108,7 +108,7 @@ namespace GamePrototype.Game
 
             void LootEnemy(Unit enemy)
             {
-                _player.AddItemsFromUnitToInventory(enemy,);
+                _player.AddItemsFromUnitToInventory(enemy);
 
             }
         }
