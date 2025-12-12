@@ -1,6 +1,8 @@
 ﻿using GamePrototype.Items.EconomicItems;
 using GamePrototype.Items.EquipItems;
 using GamePrototype.Utils;
+using System;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace GamePrototype.Units
@@ -26,14 +28,11 @@ namespace GamePrototype.Units
         {
 
             var items = Inventory.Items;
-            for (int i = 0; i < items.Count; i++)
-            {if (items[i] is Armour armour)
-                {
-                    armour.LoseDurability();
-                }         
+            foreach (var item in items)
+            {
+                if (item is Armour armour)
+                { armour.ReduceDurability(1); }
             }
-
-
         }
 
         public override void HandleCombatComplete()
@@ -46,19 +45,7 @@ namespace GamePrototype.Units
                     UseEconomicItem(economicItem);
                     Inventory.TryRemove(items[i]);
                 }
-                if (items[i] is Weapon weapon)
-                { for (int j = 0; j < items.Count; j++)
-                    {
-                        if (items[j] is Grindstone grindstone) 
-                        { 
-                            weapon.Repair(grindstone);
-                            Inventory.TryRemove(items[j]);
-                        }
-                    }
-                    
-                }
-
-            }
+             }
         }
 
         public override void AddItemToInventory(Item item)
@@ -69,6 +56,7 @@ namespace GamePrototype.Units
                 return;
             }
             base.AddItemToInventory(item);
+            
         }
 
         private void UseEconomicItem(EconomicItem economicItem)
@@ -76,6 +64,11 @@ namespace GamePrototype.Units
             if (economicItem is HealthPotion healthPotion) 
             {
                 Health += healthPotion.HealthRestore;
+            }
+            if (economicItem is Grindstone grindstone)
+            {
+                _equipment[EquipSlot.Armour].Repair(grindstone.ArmourRestore);
+            /////    
             }
         }
 
@@ -102,31 +95,33 @@ namespace GamePrototype.Units
             return builder.ToString();
         }
 
-
-        public void ReplaceEquipment()
+        public override void ReplaceEquipment(EquipItem equipItem)
         {
-            
-            Console.WriteLine($"Do you want to equip your hidden weapon? \nyes/no");
+            Console.WriteLine("You have new equipment! Want to equip it?\nyes/no");
             if (Console.ReadLine() == "yes")
             {
-                EquipItem replaced = _equipment[EquipSlot.Weapon];
-                _equipment[EquipSlot.Weapon] = _equipment[EquipSlot.freeSlot];
-                _equipment[EquipSlot.freeSlot] = replaced;
+                if (equipItem.Slot == null)
+                {
+                    _equipment.TryAdd(equipItem.Slot, equipItem);
+                }
+                else
+                {
+                    if (equipItem is Weapon weapon)
+                    {
+                        _equipment[EquipSlot.freeSlot2] = _equipment[EquipSlot.Weapon];
+                        _equipment[EquipSlot.Weapon] = equipItem;
+                    }
 
-                Console.WriteLine("Sucsses");
-                //I hope
+                    if (equipItem is Armour armour)
+                    {
+                        _equipment[EquipSlot.freeSlot2] = _equipment[EquipSlot.Armour];
+                        _equipment [EquipSlot.Armour] = equipItem;
+                    }
+
+                }
             }
-            else Console.WriteLine(); 
         }
 
-        public void EquipHidden( EquipItem replaced)
-        {
-            if (_equipment[EquipSlot.Weapon] == null)
-            {
-                _equipment[EquipSlot.Weapon] = _equipment[EquipSlot.freeSlot];
-                _equipment.Remove(EquipSlot.freeSlot);
-                Console.WriteLine($"{Name} equip hidden weapon!");
-            }
-        }
+
     }
 }

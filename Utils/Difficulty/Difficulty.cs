@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using GamePrototype.Units;
 using GamePrototype.Dungeon;
-using System.Security.Cryptography.X509Certificates;
+using GamePrototype.Utils.UnitFactory;
+using GamePrototype.Utils.DungeonBuilder;
 
 
 namespace GamePrototype.Utils.Difficulty
@@ -21,13 +22,12 @@ namespace GamePrototype.Utils.Difficulty
                 $"or {DifficultyLevel.hard} = {(int)DifficultyLevel.hard}";
         }
 
-        public virtual void SetDifficulty(string name, out Unit unit, out DungeonRoom dungeon) 
+        public virtual void SetDifficulty(string name, out Unit player, out DungeonRoom dungeon)
         {
-            unit = UnitFactoryDemo.CreatePlayer(name);
-            dungeon = DungeonBuilder.BuildDungeon();
-        }
+            player = UnitFactoryEasy.CreatePlayer(name);
+            dungeon = DungeonBuilderEasy.BuildDungeon();
 
-        
-           
+
+        }           
     }
 }

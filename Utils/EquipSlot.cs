@@ -5,7 +5,7 @@
         Weapon,
         Armour,
         Accessiories,
-        freeSlot,
+        HiddenWeapon,
         freeSlot2
 
     }

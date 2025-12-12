@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using GamePrototype.Units;
 using GamePrototype.Dungeon;
-using GamePrototype.Utils.Difficulty;
+using GamePrototype.Utils.UnitFactory;
+using GamePrototype.Utils.DungeonBuilder;
 
 namespace GamePrototype.Utils.Difficulty
 {
@@ -18,8 +19,8 @@ namespace GamePrototype.Utils.Difficulty
 
         public override void SetDifficulty(string name, out Unit unit, out DungeonRoom dungeon)
         {
-            unit = UnitFactoryDemo.CreatePlayerHard(name);
-            dungeon = DungeonBuilder.BuildDungeonHard();
+            unit = UnitFactoryHard.CreatePlayer(name);
+            dungeon = DungeonBuilderHard.BuildDungeonHard();
         }   
     }
 }

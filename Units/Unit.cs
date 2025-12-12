@@ -61,16 +61,21 @@ namespace GamePrototype.Units
             }
         }
 
-        public void AddItemsFromUnitToInventory(Unit unit)
+        public virtual void AddItemsFromUnitToInventory(Unit unit)
         {
-            for (int i = 0; i < unit.Inventory.Items.Count; i++) 
+            for (int i = 0; i < unit.Inventory.Items.Count; i++)
             {
-                if (!Inventory.TryAdd(unit.Inventory.Items[i])) 
+                if (unit.Inventory.Items[i] is EquipItem equipitem)
+                { AddItemToInventory(equipitem);}
+
+                if (!Inventory.TryAdd(unit.Inventory.Items[i]))
                 {
                     //inventory is full
-                    return;
+                    return ;
                 }
             }
         }
+
+        public virtual void ReplaceEquipment(EquipItem item) { }
     }
 }

@@ -21,5 +21,6 @@ namespace GamePrototype.Items.EquipItems
             ? _maxDurability 
             : _durability + delta;
 
+
     }
 }

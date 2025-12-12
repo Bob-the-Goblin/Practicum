@@ -1,5 +1,7 @@
 ﻿using GamePrototype.Combat;
 using GamePrototype.Dungeon;
+using GamePrototype.Items.EconomicItems;
+using GamePrototype.Items.EquipItems;
 using GamePrototype.Units;
 using GamePrototype.Utils.Difficulty;
 using System;
@@ -81,16 +83,14 @@ namespace GamePrototype.Game
             Console.WriteLine(_player.ToString());
         }
 
-        private void CheckDifficulty(DifficultyLevel level)
-        { if (level == DifficultyLevel.hard) { }
-            
-        }
         private void StartRoomEncounter(DungeonRoom currentRoom, out bool success)
         {
             success = true;
             if (currentRoom.Loot != null) 
             {
                 _player.AddItemToInventory(currentRoom.Loot);
+              if (currentRoom.Loot is EquipItem item)
+                { _player.ReplaceEquipment(item); }
             }
             if (currentRoom.Enemy != null) 
             {
@@ -108,7 +108,8 @@ namespace GamePrototype.Game
 
             void LootEnemy(Unit enemy)
             {
-                _player.AddItemsFromUnitToInventory(enemy);
+                _player.AddItemsFromUnitToInventory(enemy,);
+
             }
         }
 

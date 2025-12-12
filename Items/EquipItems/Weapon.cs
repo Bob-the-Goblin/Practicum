@@ -11,9 +11,5 @@ namespace GamePrototype.Items.EquipItems
 
         public override EquipSlot Slot => EquipSlot.Weapon;
 
-        public void Repair (Grindstone grindstone)
-        {
-            Durability += grindstone.ArmourRestore;
-        }
     }
 }
